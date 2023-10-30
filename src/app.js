@@ -22,7 +22,7 @@ const PLAYERS = [
   ];
   
   const initPlayers = (players) => {
-    let detailedPlayers = [];
+    const detailedPlayers = [];
     players.forEach((a, b) => {
       detailedPlayers.push({
         name: a,
@@ -40,15 +40,15 @@ const getRandomStrength = () => {
   };
   
   const view = (xyz) => {
-    let player = document.createElement('div');
+    const player = document.createElement('div');
     player.classList.add('player');
-    let image = document.createElement('img');
+    const image = document.createElement('img');
     image.setAttribute('src', xyz.image);
     image.setAttribute('alt', '');
-    let name = document.createElement('div');
+    const name = document.createElement('div');
     name.className = 'name';
     name.textContent = xyz.name;
-    let strength = document.createElement('div');
+    const strength = document.createElement('div');
     strength.textContent = xyz.strength;
     strength.className = 'strength';
     player.append(image, name, strength);
@@ -56,7 +56,7 @@ const getRandomStrength = () => {
   };
   
   const buildPlayers = (players, type) => {
-    let fragment = document.createElement('div');
+    const fragment = document.createElement('div');
     players
       .filter((player) => player.type == type)
       .forEach((player) => fragment.append(view(player)));
